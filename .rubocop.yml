@@ -1,4 +1,6 @@
 # .rubocop.yml
+AllCops:
+  NewCops: enable
 Layout/LineLength:
   Max: 200
 Lint/ScriptPermission:
