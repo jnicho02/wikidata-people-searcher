@@ -1,1 +1,1 @@
-require 'wikimedia/people-searcher'
+require 'wikidata/people_searcher'
