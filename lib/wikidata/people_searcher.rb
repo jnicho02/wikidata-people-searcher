@@ -4,6 +4,7 @@ require 'logger'
 require 'open-uri'
 require 'ostruct'
 
+# helps out with wikidata.org APIs
 module Wikidata
   # use default Logger, or assign your own
   class << self
@@ -11,7 +12,7 @@ module Wikidata
 
     def logger
       @logger ||= Logger.new($stdout).tap do |log|
-        log.progname = self.name
+        log.progname = name
       end
     end
   end
@@ -70,7 +71,7 @@ module Wikidata
     end
 
     def born_in
-      return if !@wikidata
+      return unless @wikidata
 
       t = @wikidata.date_of_birth
       # can be +1600-00-00 for 'unknown month and day' which breaks datetime
@@ -81,7 +82,7 @@ module Wikidata
     end
 
     def died_in
-      return if !@wikidata
+      return unless @wikidata
 
       t = @wikidata.date_of_death
       t.match(/\+(\d\d\d\d)/)[1] if t&.match(/\+(\d\d\d\d)/)
