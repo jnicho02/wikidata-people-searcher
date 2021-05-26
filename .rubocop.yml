@@ -1,0 +1,19 @@
+# .rubocop.yml
+AllCops:
+  NewCops: enable
+Layout/LineLength:
+  Max: 200
+Lint/ScriptPermission:
+  Enabled: false
+Metrics/AbcSize:
+  Enabled: false
+Metrics/ClassLength:
+  Max: 110
+Metrics/CyclomaticComplexity:
+  Max: 15
+Metrics/MethodLength:
+  Max: 80
+Metrics/PerceivedComplexity:
+  Enabled: false
+Style/FrozenStringLiteralComment:
+  Enabled: false
